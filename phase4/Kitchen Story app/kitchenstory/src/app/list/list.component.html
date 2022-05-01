@@ -1,0 +1,32 @@
+<h1>KITCHEN STORY</h1>
+<p>list works!</p>
+<h1>List of Products</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let p of products" class="container-fluid">
+        <tr>
+            <td>1</td>
+            <td>noddles</td>
+            <td>80</td>
+            <td>good</td>
+            <td> <button routerLink="remove" (click)=removeproduct(p.id)>Remove</button> </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>ketchup</td>
+            <td>120</td>
+            <td>pure </td>
+            <td> <button routerLink="remove" (click)=removeproduct(p.id)>Remove</button> </td>
+        </tr>
+    </tbody>
+</table>
+
+<router-outlet></router-outlet>

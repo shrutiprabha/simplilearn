@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Functions and prototype</h2>
+
+    <script>
+        //fuction constructor
+        function employee(name,designation,yob)
+        {
+            this.name=name;
+            this.designation=designation;
+            this.yob=yob;
+        }
+
+        employee.prototype.calculateAge=function(){
+            console.log("The current age is"+(2022-this.yob));
+        }
+
+        employee.prototype.display=function(){
+            console.log("======");
+            console.log("Name:"+this.name);
+            console.log("Designation:"+this.designation);
+            console.log("YearofBirth:"+this.yob);
+        }
+
+        //instance of function constructor using new key
+        let emp1=new employee("Alex","Tester",1996);
+        console.log(emp1);
+        emp1.calculateAge();
+        emp1.display();
+
+        let emp2=new employee("john","web developer",1991);
+        console.log(emp2);
+        emp2.calculateAge();
+        emp2.display();
+    </script>
+</body>
+</html>

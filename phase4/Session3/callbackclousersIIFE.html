@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       //IIFE
+       const empId=(function () {
+          let count=0;
+          
+          return function(){
+              ++count;
+              return `emp${count}`;//"emp"+count
+
+            }
+       })();
+
+       console.log("employee list");
+       console.log("Anurag:"+empId());
+       console.log("Dharini:"+empId());
+       console.log("Sibananda:"+empId());
+
+       //callback
+       var greeting = function(name){
+           console.log("welcome"+name);
+       }
+       var fullname=function(fname,lname,callback){
+           console.log("FullName:"+fname+" "+lname);
+           callback(fname+" "+lname);
+       }
+
+       //calling full name function and passgreeting as an argument
+       fullname("alex","wilson",greeting);
+       fullname("nandini","vora",greeting);
+   </script> 
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var map=new Map();
+
+        var add = (key, expense) => {
+            if(map.has(key))
+            {
+                value=map.get(key);
+                map.set(key,expense+value);
+            }
+            else
+            {
+                map.set(key,expense);
+            }
+        }
+        
+        var remove = (key) => {
+            if(map.has(key))
+            {
+                map.delete(key);
+            }
+            else
+            {
+                console.log("Key not found");
+            }
+        }
+
+        var showAll = () => console.log(map);
+
+        function calculate() {
+            let total=0;
+            for(let i of map.keys())
+            {
+                value=map.get(i);
+                total=total+value;
+            }
+            console.log("Total Budget: "+total);
+        }
+
+        add(1,24000);
+        add(2,32000);
+        add(3,20000);
+        add(4,21000);
+        showAll();
+
+        remove(3);
+        remove(5);
+        add(2,14000);
+        showAll();
+        calculate();
+        
+    </script>
+
+    
+</body>
+</html>
